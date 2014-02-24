@@ -7,8 +7,8 @@ $(document).ready(function(){
 	// Declare all variables
 	var _src, _target, _range, _class, _version, _refs, _selector, _esv, _bg, _url;
 
-	// Set _src to default to _esvbible if it is not already set to biblegateway
-	_src = bibleRef && bibleRef.src === 'biblegateway' ? 'biblegateway' : '_esvbible';
+	// Set _src to default to esvbible if it is not already set to biblegateway
+	_src = bibleRef && bibleRef.src === 'biblegateway' ? 'biblegateway' : 'esvbible';
 
 	// Set _target to default to _self if not already defined
 	_target = bibleRef && bibleRef.target !== '_self' ? bibleRef.target : '_self';
@@ -22,7 +22,7 @@ $(document).ready(function(){
 	// Set _version to default to NIV if not already defined
 	_version = bibleRef && bibleRef.version ? bibleRef.version : 'NIV';	
 
-	// Set _esv to function returning _esvbible.org Bible ref URL
+	// Set _esv to function returning esvbible.org Bible ref URL
 	_esv = function(_p) {
 		return "http://www.esvbible.org/" + _p.replace(/\s/g, '+');
 	}
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		return "http://www.biblegateway.com/passage/?search=" + _p.replace(/\s/g, '%20') + "&version=" + _version;
 	}
 
-	// Set _url to return appropriate _url according to _src setting
+	// Set _url to return appropriate url according to _src setting
 	_url = function(_p) {
 		return _src === '_esv' ? _esv(_p) : _src === 'biblegateway' ? _bg(_p) : _esv(_p);
 	}
