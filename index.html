@@ -36,89 +36,89 @@
 
 <p>To use in your project, simply link to the <code>bibleRef.min.js</code> file in your <code>&lt;head&gt;</code>, and define the <code>bibleRef</code> variable as an empty object to initiate bibleRef.js:</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
-    &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        bibleRef = {};
-    &lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <p>With this default configuration, the source of the Bible reference links will be to <a href="http://www.esvbible.org/">esvbible.org</a>. bibleRef.js is also preconfigured to also handle reference links to <a href="http://www.biblegateway.com/">biblegateway.com</a> by setting <code>bibleRef.src</code> to <code>'biblegateway'</code>:</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
-    &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        bibleRef = {
-            src: 'biblegateway'
-        };
-    &lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">src</span><span class="o">:</span> <span class="s1">'biblegateway'</span>
+        <span class="p">};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <p>The default version for the <code>'biblegateway'</code> configuration is NIV, but you are free to specify whatever verion you would like by setting the <code>bibleRef.version</code> to your desired version:</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
-    &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        bibleRef = {
-            src: 'biblegateway',
-            version: 'KJV'
-        };
-    &lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">src</span><span class="o">:</span> <span class="s1">'biblegateway'</span><span class="p">,</span>
+            <span class="nx">version</span><span class="o">:</span> <span class="s1">'KJV'</span>
+        <span class="p">};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <p>You are also able to configure the <code>target</code> of the <code>&lt;a&gt;</code>s that bibleRef generates by setting <code>bibleRef.target</code> to your desired setting (the default is <code>'_self'</code>):</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
-    &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        bibleRef = {
-            target: '_blank'
-        };
-    &lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">target</span><span class="o">:</span> <span class="s1">'_blank'</span>
+        <span class="p">};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
-<p>You may set <code>bibleRef.range</code> to only search a specific <code>id</code> in a webpage (note: must be an <code>id</code> [without the leading <code>#</code>], <strong>not</strong> a <code>class</code> - no class support at this time):</p>
+<p><code>bibleRef.range</code> may be set to only search a specific area of a webpage. <code>bibleRef.range</code> may be set as any selector recognizable by jQuery (i.e. any combination of <code>id</code>, <code>class</code>, element name, pseudoselectors, etc.). <code>bibleRef.range</code> defaults to <code>body</code>.</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
-    &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        bibleRef = {
-            range: 'myID'
-        };
-    &lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">range</span><span class="o">:</span> <span class="s1">'#myID, .myClass:first-child'</span>
+        <span class="p">};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <p>Setting <code>bibleRef.class</code> allows you to put a custom <code>class</code> on all Bible references that bibleRef replaces.</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
-    &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        bibleRef = {
-            class: 'myClass'
-        };
-    &lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="kr">class</span><span class="o">:</span> <span class="s1">'myClass'</span>
+        <span class="p">};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
 
 <h4>
 <a name="translation" class="anchor" href="#translation"><span class="octicon octicon-link"></span></a>Translation</h4>
 
 <p>After bibleRef.js is initialized, it will search for all references in the range you provided. When it finds a reference, it will replace it with a link to the source you provided in the form:</p>
 
-<pre><code>    &lt;a data-bible-ref href="..."&gt;bookName x:y&lt;/a&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;a</span> <span class="na">data-bible-ref</span> <span class="na">href=</span><span class="s">"..."</span><span class="nt">&gt;</span>bookName x:y<span class="nt">&lt;/a&gt;</span>
+</pre></div>
 
 <p>Note that all Bible reference links will have the <code>data-bible-ref</code> attribute for easy targeting.</p>
 
 <p>If you have set a custom class with <code>bibleRef.class</code>, it will be applied to the <code>a</code>s as well:</p>
 
-<pre><code>    &lt;a data-bible-ref href="..." class="customClass"&gt;bookName x:y&lt;/a&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;a</span> <span class="na">data-bible-ref</span> <span class="na">href=</span><span class="s">"..."</span> <span class="na">class=</span><span class="s">"customClass"</span><span class="nt">&gt;</span>bookName x:y<span class="nt">&lt;/a&gt;</span>
+</pre></div>
 
 <h2>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
@@ -134,6 +134,9 @@
 <a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
 
 <p>bibleRef.js is written and maintained by <a href="http://www.joahg.com">Joah Gerstenberg</a>, copyright 2014. All code contained within these files are licensed under an <a href="https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE">MIT license</a>.</p>
+
+<p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/JoahG/bibleref.js/trend.png" alt="Bitdeli Badge"></a>
+<img src="https://ga-beacon.appspot.com/UA-45765973-7/bibleRef.js/home?pixel" alt=""></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/JoahG">JoahG</a></p>
