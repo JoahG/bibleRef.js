@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v2.0.0 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v2.1.0 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -17,13 +17,10 @@ $(document).ready(function(){
 	_class = bibleRef && bibleRef.class ? bibleRef.class : '';
 
 	// Set _range to default to body if not already defined
-	_range = bibleRef && bibleRef.range !== 'body' ? bibleRef.range : 'body';
+	_range = bibleRef && bibleRef.range ? bibleRef.range : 'body';
 
 	// Set _version to default to NIV if not already defined
 	_version = bibleRef && bibleRef.version ? bibleRef.version : 'NIV';	
-	
-	// Set _selector to default to body if _range is not defined.
-	_selector = _range ? '#' + _range : 'body';
 
 	// Set _esv to function returning _esvbible.org Bible ref URL
 	_esv = function(_p) {
@@ -40,8 +37,8 @@ $(document).ready(function(){
 		return _src === '_esv' ? _esv(_p) : _src === 'biblegateway' ? _bg(_p) : _esv(_p);
 	}
 
-	// Search for references in HTML, and replace them with the <a> link.
-	$(_selector).html($(_selector).html().replace(/(I+\s)?(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)(\s\d+)?(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig, function(_match) {
+	// Search for references in _range HTML, and replace them with the <a> link.
+	$(_range).html($(_range).html().replace(/(I+\s)?(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)(\s\d+)?(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig, function(_match) {
 		return "<a data-bible-ref href='" + _url(_match) + "' target=" + _target + " class='" + _class + "'>" + _match + "</a>";
 	})); 
 });
