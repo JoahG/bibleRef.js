@@ -44,7 +44,14 @@
     <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
-<p>With this default configuration, the source of the Bible reference links will be to <a href="http://www.esvbible.org/">esvbible.org</a>. bibleRef.js is also preconfigured to also handle reference links to <a href="http://www.biblegateway.com/">biblegateway.com</a> by setting <code>bibleRef.src</code> to <code>'biblegateway'</code>:</p>
+<h4>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h4>
+
+<h6>
+<a name="biblerefsrc" class="anchor" href="#biblerefsrc"><span class="octicon octicon-link"></span></a><code>bibleRef.src</code>
+</h6>
+
+<p>With the default configuration, the source of the Bible reference links will be to <a href="http://www.esvbible.org/">esvbible.org</a>. bibleRef.js is also preconfigured to also handle reference links to <a href="http://www.biblegateway.com/">biblegateway.com</a> by setting <code>bibleRef.src</code> to <code>'biblegateway'</code>:</p>
 
 <div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
     <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
@@ -55,6 +62,10 @@
         <span class="p">};</span>
     <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+
+<h6>
+<a name="biblerefversion" class="anchor" href="#biblerefversion"><span class="octicon octicon-link"></span></a><code>bibleRef.version</code>
+</h6>
 
 <p>The default version for the <code>'biblegateway'</code> configuration is NIV, but you are free to specify whatever verion you would like by setting the <code>bibleRef.version</code> to your desired version:</p>
 
@@ -69,6 +80,10 @@
     <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
+<h6>
+<a name="biblereftarget" class="anchor" href="#biblereftarget"><span class="octicon octicon-link"></span></a><code>bibleRef.target</code>
+</h6>
+
 <p>You are also able to configure the <code>target</code> of the <code>&lt;a&gt;</code>s that bibleRef generates by setting <code>bibleRef.target</code> to your desired setting (the default is <code>'_self'</code>):</p>
 
 <div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
@@ -80,6 +95,10 @@
         <span class="p">};</span>
     <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+
+<h6>
+<a name="biblerefrange" class="anchor" href="#biblerefrange"><span class="octicon octicon-link"></span></a><code>bibleRef.range</code>
+</h6>
 
 <p><code>bibleRef.range</code> may be set to only search a specific area of a webpage. <code>bibleRef.range</code> may be set as any selector recognizable by jQuery (i.e. any combination of <code>id</code>, <code>class</code>, element name, pseudoselectors, etc.). <code>bibleRef.range</code> defaults to <code>body</code>.</p>
 
@@ -93,6 +112,10 @@
     <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
+<h6>
+<a name="biblerefclass" class="anchor" href="#biblerefclass"><span class="octicon octicon-link"></span></a><code>bibleRef.class</code>
+</h6>
+
 <p>Setting <code>bibleRef.class</code> allows you to put a custom <code>class</code> on all Bible references that bibleRef replaces.</p>
 
 <div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
@@ -101,6 +124,22 @@
     <span class="nt">&lt;script&gt;</span>
         <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
             <span class="kr">class</span><span class="o">:</span> <span class="s1">'myClass'</span>
+        <span class="p">};</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h6>
+<a name="biblerefabbr" class="anchor" href="#biblerefabbr"><span class="octicon octicon-link"></span></a><code>bibleRef.abbr</code>
+</h6>
+
+<p><code>bibleRef.js</code> also supports Bible book abbreviations. For false case prevention purposes, abbreviations are turned <strong>off</strong> by default. To turn abbreviation searching/replacement, set <code>bibleRef.abbr</code> to <code>true</code>. (Defaults to <code>false</code>).</p>
+
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="c">&lt;!-- Must have jQuery library defined first --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.joahg.com/bibleRef.js/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">bibleRef</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">abbr</span><span class="o">:</span> <span class="kc">true</span>
         <span class="p">};</span>
     <span class="nt">&lt;/script&gt;</span>
 </pre></div>
