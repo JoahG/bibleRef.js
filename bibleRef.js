@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v2.3.1 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v2.3.2 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -41,13 +41,13 @@ $(document).ready(function(){
 	}
 
 	// Search for references in _range HTML, and replace them with the <a> link.
-	$(_range).html($(_range).html().replace(/(I+\s)?(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|samuel|kings|chronicles|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song\sof\ssolomon|song\sof\ssongs|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)(\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?(((\,|\;)\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?)*/ig, function(_match) {
+	$(_range).html($(_range).html().replace(/(I+\s)?(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|samuel|kings|chronicles|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song\sof\ssolomon|song\sof\ssongs|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)(\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?(((\,|\;)\s?\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?)*/ig, function(_match) {
 		return "<a data-bible-ref href='" + _url(_match) + "' target=" + _target + " class='" + _class + "'>" + _match + "</a>";
 	}));
 
 	// If _abbr is set to true, search for book abbreviations in HTML and replace with link.
 	if (_abbr) {
-		$(_range).html($(_range).html().replace(/\s(gen|ge|gn|ex|exod|lev|le|lv|num|nu|nm|nb|deut|dt|josh|jos|jsh|jdg|jg|jdgs|rth|ru|(I+|\d+)\ssam|(I+|\d+)\ssa|\d+kgs|\d+chron|ezr|neh|ne|esth|es|jb|pslm|ps|psa|psm|pss|prov|pr|prv|eccles|ec|qoh|qoheleth|isa|is|jer|je|jr|lam|la|ezek|eze|ezk|dan|da|dn|hos|ho|joe|jl|am|obad|ob|jnh|jon|mic|nah|na|hab|zeph|zep|zp|hag|hg|zech|zec|zc|mal|ml|matt|mt|mrk|mk|mr|luk|lk|jn|jhn|ac|rom|ro|rm|(I+|\d+)\scor|(I+|\d+)\sco|gal|ga|ephes|eph|phil|php|col|(I+|\d+)\sthess|(I+|\d+)\sth|(I+|\d+)\sthes|(I+|\d+)\stim|(I+|\d+)\sti|tit|philem|phm|heb|jas|jm|(I+|\d+)\sjn|(I+|\d+)\sjhn|(I+|\d+)\spet|(I+|\d+)\spe|(I+|\d+)\spt|jud|rev|re)\.(\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?(((\,|\;)\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?)*/ig, function(_match) {
+		$(_range).html($(_range).html().replace(/\s(gen|ge|gn|ex|exod|lev|le|lv|num|nu|nm|nb|deut|dt|josh|jos|jsh|jdg|jg|jdgs|rth|ru|(I+|\d+)\ssam|(I+|\d+)\ssa|\d+kgs|\d+chron|ezr|neh|ne|esth|es|jb|pslm|ps|psa|psm|pss|prov|pr|prv|eccles|ec|qoh|qoheleth|isa|is|jer|je|jr|lam|la|ezek|eze|ezk|dan|da|dn|hos|ho|joe|jl|am|obad|ob|jnh|jon|mic|nah|na|hab|zeph|zep|zp|hag|hg|zech|zec|zc|mal|ml|matt|mt|mrk|mk|mr|luk|lk|jn|jhn|ac|rom|ro|rm|(I+|\d+)\scor|(I+|\d+)\sco|gal|ga|ephes|eph|phil|php|col|(I+|\d+)\sthess|(I+|\d+)\sth|(I+|\d+)\sthes|(I+|\d+)\stim|(I+|\d+)\sti|tit|philem|phm|heb|jas|jm|(I+|\d+)\sjn|(I+|\d+)\sjhn|(I+|\d+)\spet|(I+|\d+)\spe|(I+|\d+)\spt|jud|rev|re)\.(\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?(((\,|\;)\s?\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?)*/ig, function(_match) {
 			return "<a data-bible-ref href='" + _url(_match) + "' target=" + _target + " class='" + _class + "'>" + _match + "</a>";
 		}));
 	}
