@@ -155,6 +155,34 @@
 </pre></div>
 
 <h5>
+<a name="regex-matching" class="anchor" href="#regex-matching"><span class="octicon octicon-link"></span></a>Regex Matching</h5>
+
+<p>You also have the option of defining the format of the matched verses with <code>match</code>. </p>
+
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/bibleRef.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">bibleRef</span><span class="p">({</span>
+                <span class="nx">match</span><span class="o">:</span> <span class="s1">'$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER'</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>As you can see above, the <code>match</code> string defaults to <code>'$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER'</code>. Each of the characters in the string translates to a different Regex string. They translate as follows:</p>
+
+<ul>
+<li>  <code>'$S$D'</code> translates to <code>'(\s\d+)?'</code> (A space, followed by a numeral)</li>
+<li>  <code>':$D'</code> translates to <code>'(:\d+)?'</code> (A colon, followed by a numeral)</li>
+<li>  <code>'-$D'</code> translates to <code>'(\-\d+)?'</code> (A colon, followed by a numeral)</li>
+<li>  <code>'$W'</code> translates to <code>'(\w)?'</code> (Any single word character)</li>
+<li>  <code>'$R'</code> sets the beginning of a repeating section (translates to <code>'('</code>)</li>
+<li>  <code>'$ER'</code> sets the end of a repeating section (translates to <code>')*'</code>)</li>
+<li>  A comma (<code>','</code>) and a semicolon (<code>';'</code>) each translate to their respective characters, in Regex form</li>
+</ul><p>Another popular Bible reference form, with each chapter/verse combination being separated with a semicolon (<code>';'</code>) may be matched with <code>'$R$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER;$ER'</code>.</p>
+
+<h5>
 <a name="other-configuration-options" class="anchor" href="#other-configuration-options"><span class="octicon octicon-link"></span></a>Other Configuration Options</h5>
 
 <p>There are a few other configuration options available while configuring bibleRef.js. The descriptions of the options, along with their defaults are listed below.</p>
