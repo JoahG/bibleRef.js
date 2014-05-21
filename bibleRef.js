@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v3.1.1 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v3.1.2 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -16,8 +16,8 @@
 		$scope.urlSpace = $scope.urlSpace ? $scope.urlSpace : '+';
 		$scope.render = $scope.render ? $scope.render : '<a data-bible-ref href="$URL" target="$TARGET" class="$CLASS">$BIBLEREF</a>';
 		$scope.a = function(bibleRef) { 
-			var url = typeof $scope.url == 'function' ? $scope.url(bibleRef, $scope.version) : $scope.url.replace('$BIBLEREF', bibleRef.replace(/\s/g, $scope.urlSpace)).replace('$VERSION', $scope.version.replace(/\s/g, $scope.urlSpace));
-			var rendered = typeof $scope.render == 'function' ? $scope.render(bibleRef, $scope.version, url, $scope.target, $scope.class) : $scope.render.replace('$URL', url).replace('$TARGET', $scope.target).replace('$CLASS', $scope.class).replace('$BIBLEREF', bibleRef).replace('$VERSION', $scope.version);
+			var url = typeof $scope.url == 'function' ? $scope.url(bibleRef, $scope.version) : $scope.url.replace('/\$BIBLEREF/g', bibleRef.replace(/\s/g, $scope.urlSpace)).replace('/\$VERSION/g', $scope.version.replace(/\s/g, $scope.urlSpace));
+			var rendered = typeof $scope.render == 'function' ? $scope.render(bibleRef, $scope.version, url, $scope.target, $scope.class) : $scope.render.replace('/\$URL/g', url).replace('/\$TARGET/g', $scope.target).replace('/\$CLASS/g', $scope.class).replace('/\$BIBLEREF/g', bibleRef).replace('/\$VERSION/g', $scope.version);
 			return rendered;
 		};
 		$scope.regex = {
