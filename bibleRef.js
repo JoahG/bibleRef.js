@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v3.1.0 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v3.1.1 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -25,7 +25,7 @@
 			books: '(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|samuel|kings|chronicles|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song\\sof\\ssolomon|song\\sof\\ssongs|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation' + ($scope.abbr ? 'gen|ge|gn|ex|exod|lev|le|lv|num|nu|nm|nb|deut|dt|josh|jos|jsh|jdg|jg|jdgs|rth|ru|sam|sa|kgs|chron|ezr|neh|ne|esth|es|jb|pslm|ps|psa|psm|pss|prov|pr|prv|eccles|ec|qoh|qoheleth|isa|is|jer|je|jr|lam|la|ezek|eze|ezk|dan|da|dn|hos|ho|joe|jl|am|obad|ob|jnh|jon|mic|nah|na|hab|zeph|zep|zp|hag|hg|zech|zec|zc|mal|ml|matt|mt|mrk|mk|mr|luk|lk|jn|jhn|ac|rom|ro|rm|cor|co|gal|ga|ephes|eph|phil|php|col|thess|th|thes|tim|ti|tit|philem|phm|heb|jas|jm|jn|jhn|pet|pe|pt|jud|rev|re)(\\.)?' : ')'),
 			head: '\\b(I+|\\d+)?\\s?',
 			tail: function(){
-				return this.match.replace(/\$S\$D/g, '(\\s\\d+)?').replace(/:\$\D/g, '(:\\d+)?').replace(/\$W/g, '(\\w)?').replace(/\-\$D/g, '(\\-\\d+)?').replace(/\$R/g, '(').replace(/\$ER/g, ')*').replace(/\,/g, '(\\,)?').replace(/\;/g, '(\\;)?');
+				return this.match.replace(/\$S\$D/g, '(\\s\\d+)?').replace(/:\$D/g, '(:\\d+)?').replace(/\$W/g, '(\\w)?').replace(/\-\$D/g, '(\\-\\d+)?').replace(/\$R/g, '(').replace(/\$ER/g, ')*').replace(/\,/g, '(\\,)?').replace(/\;/g, '(\\;)?');
 			},
 			compiled: function() {
 				return new RegExp(this.head + this.books + this.tail(), 'gi');
