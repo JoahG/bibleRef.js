@@ -154,7 +154,7 @@ As you can see above, the `match` string defaults to `'$S$D:$D$W-$D$W:$D$W$R,$S$
 
  -   `'$S$D'` translates to `'(\s\d+)?'` (A space, followed by a numeral)
  -   `':$D'` translates to `'(:\d+)?'` (A colon, followed by a numeral)
- -   `'-$D'` translates to `'(\-\d+)?'` (A colon, followed by a numeral)
+ -   `'-$D'` translates to `'(\-\d+)?'` (A dash, followed by a numeral)
  -   `'$W'` translates to `'(\w)?'` (Any single word character)
  -   `'$R'` sets the beginning of a repeating section (translates to `'('`)
  -   `'$ER'` sets the end of a repeating section (translates to `')*'`)
